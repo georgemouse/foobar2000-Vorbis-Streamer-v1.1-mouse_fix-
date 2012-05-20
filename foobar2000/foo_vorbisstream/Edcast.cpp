@@ -1152,6 +1152,7 @@ int do_encoding(edcastGlobals *g, float *samples, int numsamples, int nch) {
 		if(sentbytes < 0) {
 			char buf[2046] = "";
 
+			g->gCurrentlyEncoding = 0;
 			disconnectFromServer(g);
 			if(g->gForceStop) {
 				g->gForceStop = 0;
